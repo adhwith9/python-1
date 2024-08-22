@@ -1,0 +1,12 @@
+def replace_negatives_and_sort(lst):
+    non_negative_numbers = [x for x in lst if x >= 0]
+    if non_negative_numbers:
+        average = sum(non_negative_numbers) / len(non_negative_numbers)
+    else:
+        average = 0  
+    updated_list = [x if x >= 0 else average for x in lst]
+    updated_list.sort()
+    return updated_list
+lst = [5, -2, 9, -8, 0, 3]
+result = replace_negatives_and_sort(lst)
+print("Sorted list:", result)
